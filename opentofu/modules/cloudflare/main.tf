@@ -19,4 +19,6 @@ resource "cloudflare_zero_trust_access_application" "app" {
   type                      = each.value.type
   session_duration          = "72h"
   auto_redirect_to_identity = false
+  allowed_idps              = [cloudflare_zero_trust_access_identity_provider.github.id]
+
 }
