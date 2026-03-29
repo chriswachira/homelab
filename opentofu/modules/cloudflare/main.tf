@@ -5,6 +5,7 @@ resource "cloudflare_zero_trust_access_identity_provider" "github" {
     client_id     = var.cloudflare_zero_trust_idp_github_client_id
     client_secret = var.cloudflare_zero_trust_idp_github_client_secret
   }
+  account_id = var.cloudflare_account_id
 }
 
 resource "cloudflare_zero_trust_access_application" "app" {
