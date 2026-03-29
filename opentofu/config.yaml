@@ -1,0 +1,12 @@
+cloudflare:
+    zero_trust:
+        applications:
+        - name: "Frigate NVR"
+          type: "self_hosted"
+          subdomain: "surveillance"
+        - name: "Proxmox VE"
+          type: "self_hosted"
+          subdomain: "pve"
+        - name: "Portainer"
+          type: "self_hosted"
+          subdomain: "portainer"
