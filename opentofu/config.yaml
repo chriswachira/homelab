@@ -10,3 +10,14 @@ cloudflare:
         - name: "Portainer"
           type: "self_hosted"
           subdomain: "portainer"
+        lists:
+        - name: "Sudoers"
+          type: "EMAIL"
+          description: "Sudoers list"
+        access_policies:
+        - name: Maintainers
+          decision: "allow"
+          session_duration: "72h"
+          require:
+            country: "KE"
+            login_method: "5b450fe9-8eb5-4144-b701-83dc13fa8f15"  # GitHub IDP

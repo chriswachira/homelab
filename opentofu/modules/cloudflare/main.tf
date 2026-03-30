@@ -22,3 +22,15 @@ resource "cloudflare_zero_trust_access_application" "app" {
   allowed_idps              = [cloudflare_zero_trust_access_identity_provider.github.id]
 
 }
+
+resource "cloudflare_zero_trust_list" "this" {
+  for_each = {
+    for list in var.cloudflare_zero_trust_lists : list.name => list
+  }
+
+  account_id  = var.cloudflare_account_id
+  name        = each.value.name
+  type        = each.value.type
+  description = each.value.description
+
+}
